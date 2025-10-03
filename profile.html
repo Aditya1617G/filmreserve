@@ -108,5 +108,9 @@
     <a href="index.html" id="home-button" style="display:none;">Home</a>
     <button id="logout-button" style="display:none;" onclick="logout()">Logout</button>
   </div>
+  // Apply saved theme across the website
+const savedTheme = localStorage.getItem('theme') || 'dark';
+document.body.classList.toggle('light-mode', savedTheme === 'light');
+
 </body>
 </html>
