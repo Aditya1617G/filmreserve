@@ -621,5 +621,9 @@ document.querySelectorAll('.play-btn').forEach(btn => {
 });
 
   </script>
+  // Apply saved theme across the website
+const savedTheme = localStorage.getItem('theme') || 'dark';
+document.body.classList.toggle('light-mode', savedTheme === 'light');
+
 </body>
 </html>
