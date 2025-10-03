@@ -1,3 +1,0 @@
-cd server
-npm init -y
-npm install express bcryptjs jsonwebtoken mongoose dotenv cors
