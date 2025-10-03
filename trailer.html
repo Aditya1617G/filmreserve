@@ -376,6 +376,9 @@ video.addEventListener('loadedmetadata', () => {
     return `${m}:${s}`;
   }
 </script>
+// Apply saved theme across the website
+const savedTheme = localStorage.getItem('theme') || 'dark';
+document.body.classList.toggle('light-mode', savedTheme === 'light');
 
 </body>
 </html>
