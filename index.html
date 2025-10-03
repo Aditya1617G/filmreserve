@@ -619,11 +619,10 @@ document.querySelectorAll('.play-btn').forEach(btn => {
     window.location.href = `${page}.html?movie=${encodeURIComponent(movie)}`;
   });
 });
-
-  </script>
-  // Apply saved theme across the website
 const savedTheme = localStorage.getItem('theme') || 'dark';
 document.body.classList.toggle('light-mode', savedTheme === 'light');
+
+  </script>
 
 </body>
 </html>
