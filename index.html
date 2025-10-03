@@ -599,6 +599,27 @@
         }
       });
     });
+    // Custom trailer access restriction
+document.querySelectorAll('.play-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const card = btn.closest('.movie-card');
+    const isTrailer = card.getAttribute('data-trailer') === 'true';
+    
+    // Check login for trailers
+    if(isTrailer && localStorage.getItem('loggedIn') !== 'true'){
+      e.preventDefault(); // prevent default navigation
+      alert("⚠️ You must be logged in to watch this trailer! Please log in first.");
+      window.location.href = "login.html";
+      return;
+    }
+
+    // Otherwise, navigate normally
+    const movie = card.getAttribute('data-name');
+    const page = isTrailer ? 'trailer' : (card.getAttribute('data-page') || 'watch');
+    window.location.href = `${page}.html?movie=${encodeURIComponent(movie)}`;
+  });
+});
+
   </script>
 </body>
 </html>
